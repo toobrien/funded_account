@@ -38,7 +38,7 @@ The default parameters are modelled after TradeDay's $50,000 funded account. The
 
 Running the `funding` simulation with the default parameters (10,000 accounts, $2,500 profit target, $2,000 trailing drawdown, 5 point profit target and stop loss, etc.) results in a pass rate of around 1.8%, with the average pass requiring around 3 months, incurring around $425 in account payments.
 
-The `survival` simulation--which uses the same parameters as the `funding` simulation, following 10,000 accounts over a maximum 36 month period--results in around 60-70 passes. Around 95-98% of this small group of traders make at least one withdrawal of the worldwide monthly median salary. The traders, on average, are able to make one withdrawal. The average gross profit--after fees and profit sharing, is around $1,300-$1,400. The best performing account generally lasts apprxoimately 9 months. Approximately half of the accounts are able to make one withdrawal, and around 80% of the accounts are able to make two withdrawals.
+The `survival` simulation--which uses the same parameters as the `funding` simulation, following 10,000 accounts over a maximum 36 month period--results in around 60-70 passes. Around 95-98% of this small group of traders make at least one withdrawal of the worldwide monthly median salary--and, on average, only one. The average gross profit--after fees and profit sharing, is around $1,300-$1,400. The best performing account generally lasts apprxoimately 9 months. Approximately half of the accounts are able to make one withdrawal, and around 80% of the accounts are able to make two withdrawals.
 
 # FINAL THOUGHTS
 
