@@ -12,24 +12,24 @@ The program has two modes `funded` and `survival`, which are arguments supplied 
 
 Both modes assume random trading, which is appropriate for most new traders who are attracted to these firms. They are governed by a set of parameters common to most funded account "prop firms", which are:
 
-`N_TRIALS`:         the number of accounts to simulate.
-`PT_VALUE`:         the point value of the future being traded (default: 20, NQ).
-`TP`:               the number of points for the trader's profit target (default: 5).
-`SL`:               the number of points for the trader's stop loss (default: 5).
-`P_WIN`:            the probability of a trader winning (default: random, based on `TP` and `SL`).
-`P_LOSE`:           same as `P_WIN`.
-`COMMISSION`:       the round-turn commission for one contract (default: based on the Ninjatrader brokerage).
-`AMT_WIN`:          the dollar amount won in one winning trade (automatically calculated).
-`AMT_LOSE`:         the dollar amount lost in one losing trade (automatically calculated).
-`ACCT_SIZE`:        the size (in dollars) of the funded account, in dollars.
-`BLOWN`:            the maximum drawdown before the account is closed.
-`PASSED`:           the profit target that, when reached, allows the trader to begin withdrawing their winnings.
-`TRADES_PER_MONTH`: the number of trades that the trader takes per month (default: 100 or 5 per day).
-`MAX_TRADES`:       the maximum number of trades to run for each account. Effectively, this parameter determines the length of the simulation (default: 36 months)
-`MONTHLY_FEE`:      the dollar amount charged for the funded account (default: $165).
-`WITHDRAWAL`:       for the `survival` simulation, the amount a trader withdraws each month (default: $811.08, the worldwide median monthly income).
-`PROFIT_SHARE`:     the proportion of profits kept by the trader (default: 0.9 or 90%).
-`PROFIT_MIN`:       the dollar amount of initial profits withheld by the firm (default: $10,000)
+- `N_TRIALS`:         the number of accounts to simulate.
+- `PT_VALUE`:         the point value of the future being traded (default: 20, NQ).
+- `TP`:               the number of points for the trader's profit target (default: 5).
+- `SL`:               the number of points for the trader's stop loss (default: 5).
+- `P_WIN`:            the probability of a trader winning (default: random, based on `TP` and `SL`).
+- `P_LOSE`:           same as `P_WIN`.
+- `COMMISSION`:       the round-turn commission for one contract (default: based on the Ninjatrader brokerage).
+- `AMT_WIN`:          the dollar amount won in one winning trade (automatically calculated).
+- `AMT_LOSE`:         the dollar amount lost in one losing trade (automatically calculated).
+- `ACCT_SIZE`:        the size (in dollars) of the funded account, in dollars.
+- `BLOWN`:            the maximum drawdown before the account is closed.
+- `PASSED`:           the profit target that, when reached, allows the trader to begin withdrawing their winnings.
+- `TRADES_PER_MONTH`: the number of trades that the trader takes per month (default: 100 or 5 per day).
+- `MAX_TRADES`:       the maximum number of trades to run for each account. Effectively, this parameter determines the length of the simulation (default: 36 months)
+- `MONTHLY_FEE`:      the dollar amount charged for the funded account (default: $165).
+- `WITHDRAWAL`:       for the `survival` simulation, the amount a trader withdraws each month (default: $811.08, the worldwide median monthly income).
+- `PROFIT_SHARE`:     the proportion of profits kept by the trader (default: 0.9 or 90%).
+- `PROFIT_MIN`:       the dollar amount of initial profits withheld by the firm (default: $10,000)
 
 Traders can assume non-random results by replacing `P_WIN` and `P_LOSE` with their own assumed probability of winning and losing a trade.
 
