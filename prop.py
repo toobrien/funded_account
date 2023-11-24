@@ -22,7 +22,6 @@ MAX_TRADES          = TRADES_PER_MONTH * 36
 MONTHLY_FEE         = 165
 WITHDRAWAL          = 9733 / 12                     # worldwide median income
 PROFIT_SHARE        = 0.9
-PROFIT_MIN          = -10000
 
 
 def funding():
@@ -86,7 +85,7 @@ def survival():
         sample          = random.choices([ AMT_WIN, AMT_LOSE ], weights = [ P_WIN, P_LOSE ], k = MAX_TRADES)
         trail_stop      = BLOWN
         passed          = False
-        gross_profit    = 0 #PROFIT_MIN
+        gross_profit    = 0
         record          = []
         color           = "#CCCCCC"
 

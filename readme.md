@@ -29,7 +29,6 @@ Both modes assume random trading, which is appropriate for most new traders who 
 - `MONTHLY_FEE`:      the dollar amount charged for the funded account (default: $165).
 - `WITHDRAWAL`:       for the `survival` simulation, the amount a trader withdraws each month (default: $811.08, the worldwide median monthly income).
 - `PROFIT_SHARE`:     the proportion of profits kept by the trader (default: 0.9 or 90%).
-- `PROFIT_MIN`:       the dollar amount of initial profits withheld by the firm (default: $10,000)
 
 Traders can assume non-random results by replacing `P_WIN` and `P_LOSE` with their own assumed probability of winning and losing a trade.
 
@@ -47,4 +46,4 @@ Many traders are attracted to funded account "prop firms" for apparently cheap a
 
 However, it is well known that most traders are not better a coin flip when it comes to picking the direction of stock indices. Accounts from those rare successes to emerge from the world of retail day trading commonly mention an unprofitable first few years. Without a real edge, one should expect random results from their first forays into the markets. With this in mind, trading funded accounts is an expensive way to get practice. The fees for "renting" these accounts are generally on the order of 30-100 basis points per month--steep enough--and almost certainly much higher when compared to the trader's actual risk capital. A trader who has only several thousand dollars will be paying potentially hundreds of basis points per month on their risk capital to participate in a funded account program.
 
-What can they expect for this trouble? The lucky ones will be able to make an extremely modest monthly salary for 1-2 months. 95-99% will likely not even be able to make one withdrawal. For the `survival` simulation, I had to disregard TradeDay's initial retention of the trader's first $10,000 profits, as not a single account was able to withdraw even half of that amount.
+What can they expect for this trouble? The lucky ones will be able to make an extremely modest monthly salary for 1-2 months. 95-99% will likely not even be able to make one withdrawal.
