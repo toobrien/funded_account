@@ -17,10 +17,11 @@ AMT_LOSE            = -(SL * PT_VALUE) - COMMISSION
 ACCT_SIZE           = 50000
 BLOWN               = -2000
 PASSED              = 2500
-TRADES_PER_MONTH    = 100
+TRADES_PER_MONTH    = 200
 MAX_TRADES          = TRADES_PER_MONTH * 36
 MONTHLY_FEE         = 165
 WITHDRAWAL          = 9733 / 12                     # worldwide median income
+SHOW_CHART          = True
 PROFIT_SHARE        = 0.9
 
 
@@ -75,6 +76,7 @@ def survival():
 
     net_gross_profit    = 0
     winners             = 0
+    survivors           = 0
     funded              = 0
     profit_hist         = []
 
@@ -85,6 +87,7 @@ def survival():
         sample          = random.choices([ AMT_WIN, AMT_LOSE ], weights = [ P_WIN, P_LOSE ], k = MAX_TRADES)
         trail_stop      = BLOWN
         passed          = False
+        died            = False
         gross_profit    = 0
         record          = []
         color           = "#CCCCCC"
@@ -116,15 +119,21 @@ def survival():
             
             elif pnl <= trail_stop:
 
-                if gross_profit > 0:
-
-                    net_gross_profit += gross_profit
-                    winners          += 1
-                    color            =  "#0000FF"
-
-                    profit_hist.append(gross_profit)
+                died = True
 
                 break
+
+        if gross_profit > 0:
+
+            net_gross_profit += gross_profit
+            winners          += 1
+            color            =  "#0000FF"
+
+            profit_hist.append(gross_profit)
+
+        if not died:
+
+            survivors += 1
 
         fig.add_trace(
             go.Scattergl(
@@ -139,22 +148,25 @@ def survival():
             row = 1,
             col = 1
         )
-    
-    fig.add_trace(
-        go.Histogram(
-            x       = profit_hist,
-            name    = "profits",
-            nbinsx  = 50
-        ),
-        row = 1,
-        col = 2
-    )
+
+    if SHOW_CHART:
+
+        fig.add_trace(
+            go.Histogram(
+                x       = profit_hist,
+                name    = "profits",
+                nbinsx  = 50
+            ),
+            row = 1,
+            col = 2
+        )
 
     fig.show()
 
     print(f"accounts:               {N_TRIALS}")
     print(f"passed trial:           {funded}")
     print(f"winners:                {winners}")
+    print(f"survivors:              {survivors}")
     print(f"avg months profitable:  {int(net_gross_profit / winners / WITHDRAWAL)}")
     print(f"avg gross profit:       ${net_gross_profit / winners:0.2f}")
 
